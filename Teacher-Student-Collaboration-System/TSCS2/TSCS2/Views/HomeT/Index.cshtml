@@ -1,0 +1,61 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+    if (Session["id"] == null)
+    {
+
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<link href="~/Design/MyStyle.css" rel="stylesheet" />
+
+
+<marquee style="backface-visibility: hidden;"><image src="~/Images/mar1.png" style="height: 150px; width: 35%;margin-right: 5px;"></image><image src="~/Images/mar2.jpg" style="height: 150px; width: 40%;margin-left: 5px;"></image><image src="~/Images/mar3.jpg" style="height: 150px; width: 35%;margin-left: 5px;"></image></marquee>
+
+<body style="background-image: url('../../Images/colorback.jpg');">
+    <div class="jumbotron" style="min-height:400px;">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Teacher Student Collaboration System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "Index", "About")</li>
+                        <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                        <li><span style="color:white;margin-left:240px;"><span>Welcome </span>@Session["userName"]!</span></li>
+                        <li><span style="margin-left:50px;"><a href="@Url.Action("Index","LoginT")">Logout</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    
+        
+    
+        <div align=center style="margin-top: 1.5%">
+            <div style="margin-left:200px; margin-right:200px; padding-top:30px;padding-bottom:30px;"> <a href="~/Course/Index" class="animated-button victoria-two">Courses</a> </div>
+            <div style="margin-left:200px; margin-right:200px; padding-top:30px;padding-bottom:30px;"> <a href="~/Upload/Index" class="animated-button victoria-three">Upload Materials</a> </div>
+            <div style="margin-top:5px;">
+                <div style="margin-left:200px; margin-right:200px; padding-top:30px;padding-bottom:30px;"> <a href="@Url.Action("Index","MyCourse")" class="animated-button victoria-one">My course</a> </div>
+                <div style="margin-left:200px; margin-right:200px; padding-top:30px;padding-bottom:30px;"> <a href="~/UploadQ/Index" class="animated-button thar-four">Upload Quiz Marks</a> </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+

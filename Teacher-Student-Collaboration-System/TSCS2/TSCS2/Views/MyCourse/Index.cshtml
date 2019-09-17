@@ -1,0 +1,39 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AccessHome.cshtml";
+    if (Session["id"] == null)
+    {
+
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<body style="background-image: url('../../Images/colorback.jpg');">
+ 
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Course Name</th>
+                <th>Course Title</th>
+                <th></th>
+            </tr>
+
+            @for (int i = 0; i < Model.Rows.Count; i++)
+            {
+                <tr>
+                    <td>
+
+                        <!--<a href="@Url.Action("Index", "Materials", new {@id=@Model.Rows[i][0] })">-->@Model.Rows[i][1]<!--</a>-->
+                    </td>
+                    <td>@Model.Rows[i][2]</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Course", new {@id=@Model.Rows[i][0] })"><span class="glyphicon glyphicon-edit"style="margin-left:15px;" >Edit</span></a>
+                        <a href="@Url.Action("Delete", "Course", new {@id=@Model.Rows[i][0] })"><span class="glyphicon glyphicon-remove"style="margin-left:15px;">Delete</span></a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <a href="@Url.Action("Create","Course")">Add Course</a>
+ 
+</body>

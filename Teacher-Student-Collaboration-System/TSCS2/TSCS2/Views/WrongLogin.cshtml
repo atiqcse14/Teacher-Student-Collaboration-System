@@ -1,0 +1,9 @@
+﻿@model TSCS2.Models.LoginModel
+@{
+    ViewBag.Title = "WrongLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Your user name and password is not correct</h1>
+<a href="@Url.Action("Index","Login")" class="btn btn-success"><b>Back to the login page</b></a>
+

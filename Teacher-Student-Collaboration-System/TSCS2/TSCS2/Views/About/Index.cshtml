@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AccessHome.cshtml";
+    if (Session["id"] == null)
+    {
+
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<body style="background-image: url('../../Images/colorback.jpg');">
+    <div class="jumbotron">
+        <h2>
+            <strong><u>Teacher-Student Collaboration System </u></strong>
+        </h2>
+
+        <p>
+            TSCS is a web based software in which teacher can create, update & delete course. Teacher can add quiz marks, attendance marks of the student. On the other side, student can see which courses are free and can be taken.
+            Student can see the quiz, attendance marks, can download materials. It is useful for both teacher and student. Any teacher can edit the course and delete the course. It is useful for both teachers and students.
+        <br>
+            We can say it’s all about solving the problems of communication between teachers
+            and students. With its dynamic process hope we can deport sharing problems. So all the sides
+            can get complication free information gathering way.
+        </p>
+    </div>
+</body>
